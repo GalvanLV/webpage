@@ -79,7 +79,7 @@ body {
     width: 30px;
     height: 100vh;
     background-color: var(--c-blue-dark);
-    border: 1px solid var(--c-white-bone-rgba);
+    border-right: 1px solid var(--c-white-bone-rgba);
     z-index: 2;
     display: flex;
     justify-content: flex-start;
