@@ -187,10 +187,11 @@ body {
 
 /* --- homepage --- */
 .homepage {
-    margin: 0 auto; /* Centrado horizontal */
     width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 600px;
     position: relative; /* Dentro del flujo del documento */
     text-align: left;
+    height: auto;
 }
 .homepage p {
     margin-left: 0; /* Pegado al lado izquierdo */
@@ -223,16 +224,10 @@ body {
         position: fixed;
         left: 200px;
         width: calc(100% - 200px);
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        overflow: auto;
     }
     .homepage {
         margin-top: 0px;
         width: 100%;
-        max-width: 825px;
-        height: auto;
         position: relative;
     }
 }
@@ -245,6 +240,12 @@ body {
         justify-content: center; /* Centrado vertical */
         align-items: flex-end; /* Alineamos el contenido a la derecha */
     }
+    .background {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        overflow: auto;
+    }
     .homepage {
         height: 100%;
         display: flex;
@@ -252,6 +253,7 @@ body {
         margin-top: 100px;
         margin-right: 0;
         margin-left: auto;
+        max-width: 700px;
     }
 }
 
