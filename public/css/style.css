@@ -1,44 +1,43 @@
-/* --- add values --- */
-:root
-{
+/* --- values --- */
+:root {
     --c-red-dark: #8b0000;
     --c-blue-dark: #00030a;
     --c-white-bone: #fffcf5;
     --c-white-bone-rgba: #fffcf550;
 }
 
-/* --- font families --- */
-@font-face {                        /* thin */
+                        /* --- font families --- */
+@font-face { /* thin */
     font-family: 'NeueMontreal-Thin';
     src: url('../assets/fonts/NeueMontreal-Thin.otf') format('opentype');
     font-weight: 200;
     font-style: normal;
 }
-@font-face {                        /* regular */
+@font-face { /* regular */
     font-family: 'NeueMontreal-Regular';
     src: url('../assets/fonts/NeueMontreal-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
-@font-face {                        /* medium */
+@font-face { /* medium */
     font-family: 'NeueMontreal-Medium';
     src: url('../assets/fonts/NeueMontreal-Medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
-@font-face {                        /* bold */
+@font-face { /* bold */
     font-family: 'NeueMontreal-Bold';
     src: url('../assets/fonts/NeueMontreal-Bold.otf') format('opentype');
     font-weight: 800;
     font-style: normal;
 }
-@font-face {                        /* italic */
+@font-face { /* italic */
     font-family: 'NeueMontreal-Italic';
     src: url('../assets/fonts/NeueMontreal-Italic.otf') format('opentype');
     font-weight: 700;
     font-style: italic;
 }
-@font-face {                        /* italic bold */
+@font-face { /* italic bold */
     font-family: 'NeueMontreal-ItalicBold';
     src: url('../assets/fonts/NeueMontreal-ItalicBold.otf') format('opentype');
     font-weight: 800;
@@ -46,10 +45,8 @@
 }
 
 /* --- 1rem/em = 10px --- */
-html
-{font-size: 62.5%;}
-body
-{font-size: 14px;}
+html { font-size: 62.5%; }
+body { font-size: 14px; }
 
 /* --- box sizing --- */
 html, body {
@@ -66,14 +63,17 @@ body {
 /* --- webpage --- */
 .webpage {
     position: relative;
+    display: flex;
     width: 100vw;
     height: 100vh;
     color: var(--c-white-bone);
+    background-color: var(--c-blue-dark);
 }
 
+                        /* --- menu --- */
 /* --- menu --- */
 .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 30px;
@@ -86,11 +86,10 @@ body {
     align-items: center;
     transition: width 0.3s ease;
 }
-
+/* --- menu expanded --- */
 .menu.expanded {
     width: 150px;
 }
-
 /* --- menu button --- */
 .menu__button {
     position: absolute;
@@ -108,11 +107,6 @@ body {
     transition: color 0.3s ease;
     z-index: 3;
 }
-
-.menu__button.open {
-    color: var(--c-red-dark);
-}
-
 /* --- menu content --- */
 .menu__content {
     position: absolute;
@@ -124,11 +118,12 @@ body {
     opacity: 0;
     transition: visibility 0s 0.2s, opacity 0.2s ease-in-out;
     display: flex;
-    flex-direction: column; /* elements like column */
-    justify-content: flex-start; /* next to the top */
-    align-items: flex-end; /* next to the right */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
-.menu.expanded .menu__content {
+.menu.expanded
+.menu__content {
     visibility: visible;
     opacity: 1;
     transition-delay: 0.2s;
@@ -143,20 +138,17 @@ body {
     justify-content: flex-start;
     align-items: flex-end;
 }
-
 .menu__name {
     font-family: 'NeueMontreal-Medium', sans-serif;
     font-size: 18px;
     text-transform: uppercase;
     padding-top: 10px;
 }
-
 .menu__job {
     font-family: 'NeueMontreal-Regular', sans-serif;
     font-size: 10px;
     margin-bottom: 50px;
 }
-
 /* --- menu links --- */
 .menu__links {
     padding-right: 10px;
@@ -164,7 +156,6 @@ body {
     flex-direction: column;
     align-items: flex-end;
 }
-
 .menu__link {
     color: var(--c-white-bone);
     font-family: 'NeueMontreal-Regular', sans-serif;
@@ -172,30 +163,92 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     margin-bottom: 10px;
-    position: relative; /* Important for interactions */
+    position: relative;
 }
-
 .menu__link:hover {
     color: var(--c-red-dark);
 }
 
-
-
-                                    /* --- background--- */
+                        /* --- background --- */
+/* --- background --- */
 .background {
+    z-index: 1;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 30px;
+    width: calc(100% - 30px);
     height: 100%;
+    background-size: cover;
     background-color: var(--c-blue-dark);
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 40px;
-    padding-bottom: 10px;
+    padding: 10px;
     box-sizing: border-box;
-    z-index: 1;
+    overflow: auto; /* scroll activated */
 }
+
+/* --- homepage --- */
 .homepage {
-    margin-top: 100px;
+    margin: 0 auto; /* Centrado horizontal */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: calc(100% - 30px); /* Ancho máximo del contenido */
+    position: relative; /* Dentro del flujo del documento */
+    text-align: left;
 }
+.homepage p {
+    margin-left: 0; /* Pegado al lado izquierdo */
+}
+
+                        /* --- effects --- */
+.selected {
+    color: var(--c-red-dark);
+}
+
+                        /* --- media query --- */
+@media screen and (min-width: 481px) { /* iPad / Tablet */
+}
+@media screen and (min-width: 769px) { /* laptop / small screen */
+    .menu { /* always expanded */
+        width: 150px;
+    }
+    .menu__button { /* no button */
+        display: none;
+    }
+    .menu__content { /* Menu visible */
+        visibility: visible;
+        opacity: 1;
+        transition: none;
+    }
+    .background { 
+        position: fixed;
+        left: 150px;
+        width: calc(100% - 150px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        overflow: auto;
+    }
+    .homepage {
+        margin-top: 0px;
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        position: relative;
+    }
+}
+@media screen and (min-width: 1025px) { /* monitor / big screen */
+    .webpage {
+        flex-direction: column;  /* Aplica flex en columna */
+        justify-content: center; /* Centrado vertical */
+        align-items: flex-end; /* Alineamos el contenido a la derecha */
+    }
+    .homepage {
+        position: relative;
+        height: 100%;
+        display: flex;
+        text-align: right;
+        margin-right: 0;
+        margin-left: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
