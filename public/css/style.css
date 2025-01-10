@@ -185,16 +185,34 @@ body {
     overflow: auto; /* scroll activated */
 }
 
-/* --- homepage --- */
-.homepage {
+/* --- main --- */
+.main {
     width: 100%; /* Ocupa todo el ancho del contenedor */
     max-width: 600px;
     position: relative; /* Dentro del flujo del documento */
     text-align: left;
     height: auto;
 }
-.homepage p {
+.main p {
     margin-left: 0; /* Pegado al lado izquierdo */
+}
+/* --- projects --- */
+/* --- info --- */
+/* --- contact --- */
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+}
+.contact__link {
+    text-transform: uppercase;
+    margin: 10px 0; /* Espaciado entre enlaces */
+    color: var(--c-white-bone);
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 30px; /* Tamaño de fuente */
+}
+.contact__link:hover {
+    color: var(--c-red-dark);
 }
 
                         /* --- effects --- */
@@ -225,7 +243,7 @@ body {
         left: 200px;
         width: calc(100% - 200px);
     }
-    .homepage {
+    .main {
         margin-top: 0px;
         width: 100%;
         position: relative;
@@ -246,9 +264,12 @@ body {
         align-items: flex-start;
         overflow: auto;
     }
-    .homepage {
+    .main {
         height: 100%;
         display: flex;
+
+    justify-content: flex-end; /* Empuja el contenido a la derecha */
+    align-items: flex-start; /* Alinea verticalmente al inicio */
         text-align: right;
         margin-top: 100px;
         margin-right: 0;
