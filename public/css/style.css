@@ -63,7 +63,6 @@ body {
 }
 a { /* issues in mobile phones */
     text-decoration: none !important;
-    color: inherit !important;
 }
 a:hover { /* issues in mobile phones */
     color: var(--c-red-dark) !important;
@@ -193,7 +192,6 @@ a:hover { /* issues in mobile phones */
     box-sizing: border-box;
     overflow: auto; /* scroll activated */
 }
-
 /* --- main --- */
 .main {
     width: 100%; /* Ocupa todo el ancho del contenedor */
@@ -206,14 +204,12 @@ a:hover { /* issues in mobile phones */
     margin-left: 0; /* Pegado al lado izquierdo */
 }
 /* --- projects --- */
-/* --- info --- */
-/* --- contact --- */
-.contact {
+.submenu {
     display: flex;
     flex-direction: column;
     margin-right: 0;
 }
-.contact__link {
+.submenu__link {
     text-transform: uppercase;
     margin: 10px 0; /* Espaciado entre enlaces */
     color: var(--c-white-bone);
@@ -221,7 +217,9 @@ a:hover { /* issues in mobile phones */
     font-size: 30px; /* Tamaño de fuente */
     outline: none;
 }
-.contact__link:hover {
+/* --- info --- */
+/* --- contact --- */
+.submenu__link:hover {
     color: var(--c-red-dark);
 }
 
