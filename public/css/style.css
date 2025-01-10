@@ -54,10 +54,19 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 }
+
+/* --- general --- */
 body {
     height: 100vh;
     overflow: hidden;
     font-family: 'NeueMontreal-Regular', sans-serif;
+}
+a { /* issues in mobile phones */
+    text-decoration: none !important;
+    color: inherit !important;
+}
+a:hover { /* issues in mobile phones */
+    color: var(--c-red-dark) !important;
 }
 
 /* --- webpage --- */
@@ -210,6 +219,7 @@ body {
     color: var(--c-white-bone);
     text-decoration: none; /* Quita el subrayado */
     font-size: 30px; /* Tamaño de fuente */
+    outline: none;
 }
 .contact__link:hover {
     color: var(--c-red-dark);
@@ -267,9 +277,8 @@ body {
     .main {
         height: 100%;
         display: flex;
-
-    justify-content: flex-end; /* Empuja el contenido a la derecha */
-    align-items: flex-start; /* Alinea verticalmente al inicio */
+        justify-content: flex-end; /* Empuja el contenido a la derecha */
+        align-items: flex-start; /* Alinea verticalmente al inicio */
         text-align: right;
         margin-top: 100px;
         margin-right: 0;
