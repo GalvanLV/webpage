@@ -34,17 +34,12 @@ menuButton.addEventListener('click', function() {
 });
 
 const submenuLinks = document.querySelectorAll('.submenu__link');
+const menuLinks = document.querySelectorAll('.menu__link');
 const submenu = document.querySelector('.submenu');
 const dynamicContent = document.getElementById('dynamicContent');
 const main = document.querySelector('.main');
 
-// submenu content
-const contentData = {
-    about: '<h2>About Me</h2><p>This is the about section.</p>',
-    experience: '<h2>Experience</h2><p>This is the experience section.</p>',
-    skills: '<h2>Skills</h2><p>This is the skills section.</p>',
-    projects: '<h2>Projects</h2><p>This is the projects section.</p>',
-};
+import { contentData } from './submenuContent.js';
 
 // submenu transition
 function handleContentTransition(link, contentKey) {
@@ -52,18 +47,24 @@ function handleContentTransition(link, contentKey) {
     main.classList.add('change');
 
     setTimeout(() => {
-        // update content
-        dynamicContent.innerHTML = contentData[contentKey];
-        // change "selected" link
-        submenuLinks.forEach(link => link.classList.remove('selected'));
-        link.classList.add('selected');
-        // hide/move submenu
-        submenu.classList.add('change');
-        // show new content
-        dynamicContent.classList.add('visible');
-        // end fade main
-        main.classList.remove('change');
-    }, 300); // Timeout matches the CSS transition duration
+        if (contentData[contentKey]) {
+            // update content
+            dynamicContent.innerHTML = contentData[contentKey] || '<h2>No Content</h2><p>Content not available.</p>';
+            // change "selected" link
+            submenuLinks.forEach(link => link.classList.remove('selected'));
+            menuLinks.forEach(link => link.classList.remove('selected'));
+            link.classList.add('selected');
+            // hide/move submenu
+            submenu.classList.add('change');
+            // show new content
+            dynamicContent.classList.add('visible');
+            // end fade main
+            main.classList.remove('change');
+        } else {
+            // If no matching content key, navigate to the link's href
+            window.location.href = link.getAttribute('href');
+        }
+    }, 200); // Timeout matches the CSS transition duration
 }
 
 // submenu links
@@ -72,5 +73,24 @@ submenuLinks.forEach(link => {
         e.preventDefault();
         const contentKey = this.getAttribute('data-content');
         handleContentTransition(this, contentKey);
+    });
+});
+
+// menu links
+menuLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        const contentKey = this.getAttribute('href').replace('.html', '');
+
+        // Check if contentKey exists in the data
+        if (contentData[contentKey]) {
+            e.preventDefault(); // Prevent navigation if content is handled dynamically
+            handleContentTransition(this, contentKey);
+        } else {
+            // Allow default navigation for external pages or other HTML files
+            main.classList.add('change'); // Optional: add transition effect
+            setTimeout(() => {
+                window.location.href = this.getAttribute('href');
+            }, 200);
+        }
     });
 });
