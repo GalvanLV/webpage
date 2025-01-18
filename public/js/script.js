@@ -44,7 +44,7 @@ import { contentData } from './submenuContent.js';
 // submenu transition
 function handleContentTransition(link, contentKey) {
     // start fade main
-    main.classList.add('change');
+    submenu.classList.add('change');
 
     setTimeout(() => {
         if (contentData[contentKey]) {
@@ -52,14 +52,11 @@ function handleContentTransition(link, contentKey) {
             dynamicContent.innerHTML = contentData[contentKey] || '<h2>No Content</h2><p>Content not available.</p>';
             // change "selected" link
             submenuLinks.forEach(link => link.classList.remove('selected'));
-            menuLinks.forEach(link => link.classList.remove('selected'));
             link.classList.add('selected');
             // hide/move submenu
             submenu.classList.add('change');
             // show new content
             dynamicContent.classList.add('visible');
-            // end fade main
-            main.classList.remove('change');
         } else {
             // If no matching content key, navigate to the link's href
             window.location.href = link.getAttribute('href');
