@@ -44,7 +44,7 @@ import { contentData } from './submenuContent.js';
 // submenu transition
 function handleContentTransition(link, contentKey) {
     // start fade main
-    submenu.classList.add('change');
+    submenu.classList.add('change'); // Submenu desaparece
 
     setTimeout(() => {
         if (contentData[contentKey]) {
@@ -53,15 +53,20 @@ function handleContentTransition(link, contentKey) {
             // change "selected" link
             submenuLinks.forEach(link => link.classList.remove('selected'));
             link.classList.add('selected');
-            // hide/move submenu
-            submenu.classList.add('change');
+            
             // show new content
-            dynamicContent.classList.add('visible');
+            dynamicContent.classList.add('change');
         } else {
             // If no matching content key, navigate to the link's href
             window.location.href = link.getAttribute('href');
         }
+        // hide/move submenu
+        submenu.classList.add('change');
+        dynamicContent.classList.add('change');
     }, 200); // Timeout matches the CSS transition duration
+    setTimeout(() => {
+        dynamicContent.classList.add('change');
+    }, 200); // Tiempo suficiente para el fade-out
 }
 
 // submenu links
