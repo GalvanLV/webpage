@@ -92,7 +92,7 @@ a:hover { /* issues in mobile phones */
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    transition: width 0.3s ease;
+    transition: width 0.2s ease;
 }
 /* --- menu expanded --- */
 .menu.expanded {
@@ -112,7 +112,7 @@ a:hover { /* issues in mobile phones */
     writing-mode: vertical-rl;
     text-align: center;
     transform: translateY(-50%) rotate(180deg);
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
     z-index: 3;
 }
 /* --- menu content --- */
@@ -124,7 +124,7 @@ a:hover { /* issues in mobile phones */
     height: 100%;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s 0.3s, opacity 0.3s ease-in-out;
+    transition: visibility 0s 0.2s, opacity 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -134,7 +134,7 @@ a:hover { /* issues in mobile phones */
 .menu__content {
     visibility: visible;
     opacity: 1;
-    transition-delay: 0.3s;
+    transition-delay: 0.2s;
 }
 .menu__name,
 .menu__job {
@@ -195,15 +195,25 @@ a:hover { /* issues in mobile phones */
 .main {
     width: 100%;
     position: relative;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
     text-align: left;
     height: auto;
-    height: 100%; /* Ocupa toda la altura del contenedor padre */
+    height: 100%;
+}
+.main.change {
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
 }
 .main p {
     margin-left: 0;
 }
-.homepage {
+.homepage,
+.submenu,
+.content {
     padding: 20px;
+}
+.homepage {
     max-width: 750px;
 }
 .submenu {
@@ -211,8 +221,7 @@ a:hover { /* issues in mobile phones */
     display: flex;
     flex-direction: column;
     margin-right: 0;
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 }
 .submenu.change {
     display: none;
@@ -231,10 +240,9 @@ a:hover { /* issues in mobile phones */
 .content {
     position: absolute;
     margin-left: 0;
-    padding: 20px;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s 0.3s, opacity 0.3s ease-in-out;
+    transition: visibility 0s 0.1s, opacity 0.1s ease-in-out;
     display: block;
     color: var(--c-white-bone);
     font-size: 16px;
@@ -243,7 +251,7 @@ a:hover { /* issues in mobile phones */
     position: relative;
     visibility: visible;
     opacity: 1;
-    transition: visibility 0s 0.3s, opacity 0.3s ease-in-out;
+    transition: visibility 0s 0.1s, opacity 0.1s ease-in-out;
 }
 
                         /* --- effects --- */
