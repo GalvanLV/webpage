@@ -23,7 +23,7 @@ menuButton.addEventListener('click', function() {
         menu.classList.add('expanded');
         // show elements
         setTimeout(function() {
-            menuContent.style.transition = 'visibility 0s 0s, opacity 0.2s ease-in';
+            menuContent.style.transition = 'visibility 0s 2s, opacity 0.2s ease-in';
             menuContent.style.visibility = 'visible';
             menuContent.style.opacity = '1';
         }, 200);
@@ -86,11 +86,14 @@ menuLinks.forEach(link => {
             e.preventDefault(); // Prevent navigation if content is handled dynamically
             handleContentTransition(this, contentKey);
         } else {
-            // Allow default navigation for external pages or other HTML files
-            main.classList.add('change'); // Optional: add transition effect
+            e.preventDefault(); // Prevent default navigation initially
+            main.classList.add('change'); // Start fade-out effect
+
+            // Wait for the duration of the fade-out effect before navigating
             setTimeout(() => {
+                // Navigate after the fade-out effect
                 window.location.href = this.getAttribute('href');
-            }, 200);
+            }, 200); // Match the transition time
         }
     });
 });

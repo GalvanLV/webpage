@@ -196,14 +196,13 @@ a:hover { /* issues in mobile phones */
     width: 100%;
     position: relative;
     opacity: 1;
-    transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
     text-align: left;
     height: auto;
     height: 100%;
 }
 .main.change {
     opacity: 0;
-    transition: opacity 0.1s ease-in-out;
 }
 .main p {
     margin-left: 0;
@@ -221,7 +220,7 @@ a:hover { /* issues in mobile phones */
     display: flex;
     flex-direction: column;
     margin-right: 0;
-    transition: transform 0.1s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 .submenu.change {
     display: none;
@@ -242,7 +241,7 @@ a:hover { /* issues in mobile phones */
     margin-left: 0;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s 0.1s, opacity 0.1s ease-in-out;
+    transition: visibility 0s 0.2s, opacity 0.2s ease-in-out;
     display: block;
     color: var(--c-white-bone);
     font-size: 16px;
@@ -251,7 +250,6 @@ a:hover { /* issues in mobile phones */
     position: relative;
     visibility: visible;
     opacity: 1;
-    transition: visibility 0s 0.1s, opacity 0.1s ease-in-out;
 }
 
                         /* --- effects --- */
