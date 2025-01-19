@@ -213,7 +213,7 @@ a:hover { /* issues in mobile phones */
     padding: 20px;
 }
 .homepage {
-    max-width: 750px;
+    max-width: 500px;
 }
 .submenu {
     height: 100vh;
@@ -304,6 +304,9 @@ a:hover { /* issues in mobile phones */
         align-items: flex-start;
         text-align: right;
         margin-right: 0;
+    }
+    .homepage {
+        margin-top: 150px;
     }
     .submenu {
         transform: translateX(0);
