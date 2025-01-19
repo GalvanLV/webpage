@@ -1,3 +1,5 @@
+import { contentData } from './submenuData.js';
+
 const menuButton = document.getElementById('menu__button');
 const menu = document.querySelector('.menu');
 const menuContent = document.querySelector('.menu__content');
@@ -39,13 +41,10 @@ const submenu = document.querySelector('.submenu');
 const dynamicContent = document.getElementById('dynamicContent');
 const main = document.querySelector('.main');
 
-import { contentData } from './submenuContent.js';
-
 // submenu transition
 function handleContentTransition(link, contentKey) {
     // start fade main
-    submenu.classList.add('change'); // Submenu desaparece
-
+    submenu.classList.add('change');
     setTimeout(() => {
         if (contentData[contentKey]) {
             // update content
@@ -53,28 +52,33 @@ function handleContentTransition(link, contentKey) {
             // change "selected" link
             submenuLinks.forEach(link => link.classList.remove('selected'));
             link.classList.add('selected');
-            
             // show new content
             dynamicContent.classList.add('change');
         } else {
-            // If no matching content key, navigate to the link's href
+            // if no matching content key, navigate to link href
             window.location.href = link.getAttribute('href');
         }
         // hide/move submenu
         submenu.classList.add('change');
         dynamicContent.classList.add('change');
-    }, 200); // Timeout matches the CSS transition duration
+    }, 200);
     setTimeout(() => {
         dynamicContent.classList.add('change');
-    }, 200); // Tiempo suficiente para el fade-out
+    }, 200);
 }
+
+const submenuDescriptions = document.querySelectorAll('.submenu__description');
 
 // submenu links
 submenuLinks.forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
         const contentKey = this.getAttribute('data-content');
+        // hide all submenu__description
         handleContentTransition(this, contentKey);
+        submenuDescriptions.forEach(description => {
+            description.classList.add('change');
+        });
     });
 });
 
@@ -82,20 +86,19 @@ submenuLinks.forEach(link => {
 menuLinks.forEach(link => {
     link.addEventListener('click', function (e) {
         const contentKey = this.getAttribute('href').replace('.html', '');
-
-        // Check if contentKey exists in the data
+        // check if contentKey exists
         if (contentData[contentKey]) {
-            e.preventDefault(); // Prevent navigation if content is handled dynamically
+            e.preventDefault();
             handleContentTransition(this, contentKey);
         } else {
-            e.preventDefault(); // Prevent default navigation initially
-            main.classList.add('change'); // Start fade-out effect
-
-            // Wait for the duration of the fade-out effect before navigating
+            e.preventDefault();
+            // fade-out
+            main.classList.add('change');
+            // wait for fade-out
             setTimeout(() => {
-                // Navigate after the fade-out effect
+                // go to .html
                 window.location.href = this.getAttribute('href');
-            }, 200); // Match the transition time
+            }, 200);
         }
     });
 });

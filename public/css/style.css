@@ -61,6 +61,11 @@ body {
     overflow: hidden;
     font-family: 'NeueMontreal-Regular', sans-serif;
 }
+h1 {
+    margin: 0px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
 a { /* issues in mobile phones */
     text-decoration: none !important;
 }
@@ -219,21 +224,33 @@ a:hover { /* issues in mobile phones */
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     transition: transform 0.2s ease-in-out;
 }
 .submenu.change {
     display: none;
 }
+
 .submenu__link {
     text-transform: uppercase;
-    margin: 10px 0;
+    margin: 0;
     color: var(--c-white-bone);
     text-decoration: none;
-    font-size: 30px;
+    font-size: 40px;
     outline: none;
 }
 .submenu__link:hover {
     color: var(--c-red-dark);
+}
+.submenu__description {
+    font-size: 12px;
+    margin: 0;
+    margin-right: 10px;
+    color: var(--c-white-bone);
+    transition: opacity 0.2s ease-in-out;
+}
+.submenu__description.change {
+    opacity: 0;
 }
 .content {
     position: absolute;
@@ -263,6 +280,9 @@ a:hover { /* issues in mobile phones */
     }
 }
 @media screen and (min-width: 769px) { /* laptop / small screen */
+    h1 {
+        font-size: 50px;
+    }
     .menu { /* always expanded */
         width: 200px;
     }
@@ -305,25 +325,33 @@ a:hover { /* issues in mobile phones */
         text-align: right;
         margin-right: 0;
     }
-    .homepage {
-        margin-top: 150px;
-    }
     .submenu {
         transform: translateX(0);
         opacity: 1;
-        width: 30%;
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
     }
     .submenu.change {
+        min-width: 500px;
+        width: 40%;
         display: flex;
         border-right: 1px solid var(--c-white-bone-rgba);
     }
+    .submenu__item {
+        display: flex;
+        align-items: baseline;
+        flex-direction: row-reverse;
+        margin-bottom: 10px;
+    }
+    .submenu__link {
+        margin-right: 0;
+        margin-left: 10px;
+    }
     .content {
         flex: 1;
-        min-width: 500px;
         text-align: left;
-        width: 70%;
+        width: 60%;
     }
 }
 
