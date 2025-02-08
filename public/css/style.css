@@ -267,6 +267,14 @@ a:hover { /* issues in mobile phones */
     visibility: visible;
     opacity: 1;
 }
+/* --- about --- */
+.about__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
 
                         /* --- effects --- */
 .selected {
@@ -280,6 +288,7 @@ a:hover { /* issues in mobile phones */
     }
 }
 @media screen and (min-width: 769px) { /* laptop / small screen */
+    body { font-size: 16px; }
     h1 {
         font-size: 50px;
     }
