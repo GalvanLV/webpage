@@ -25,7 +25,6 @@ menuButton.addEventListener('click', function() {
         menu.classList.add('expanded');
         // show elements
         setTimeout(function() {
-            menuContent.style.transition = 'visibility 0s 2s, opacity 0.2s ease-in';
             menuContent.style.visibility = 'visible';
             menuContent.style.opacity = '1';
         }, 200);
