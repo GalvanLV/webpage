@@ -203,6 +203,7 @@ a:hover { /* issues in mobile phones */
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
     text-align: left;
+    box-sizing: border-box;
 }
 .main.change {
     opacity: 0;
