@@ -3,73 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secciones con transición</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .section {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      transition: flex 0.5s ease;
-    }
-    .section1 {
-      background: #3498db;
-    }
-    .section2 {
-      background: #2ecc71;
-      position: relative;
-    }
-    .section3 {
-      background: #e74c3c;
-      flex: 0;
-      overflow: hidden;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      position: absolute;
-      bottom: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/prueba.css">
+  <title>prueba</title>
+
 </head>
 <body>
 
-  <div class="section section1"></div>
-  <div class="section section2"><button id="showSection3">Mostrar Sección 3</button>
-  </div>
-  <div class="section section3"></div>
+    <div class="menu">
+        <div class="menu-item" onclick="showSubmenu('home')">Home</div>
+        <div class="menu-item" onclick="showSubmenu('about')">About</div>
+        <div class="menu-item" onclick="showSubmenu('services')">Services</div>
+        <div class="menu-item" onclick="showSubmenu('contact')">Contact</div>
+    </div>
+      
 
-  <script>
-    const button = document.getElementById('showSection3');
-    const section1 = document.querySelector('.section1');
-    const section2 = document.querySelector('.section2');
-    const section3 = document.querySelector('.section3');
+    <div class="content-container">
+        <div id="submenu" class="submenu"></div>
+        <div id="detail" class="detail-panel"></div>
+    </div>
 
-    let section3Visible=false;
-    button.addEventListener('click', () => {
-        if (section3Visible) {
-            section1.style.flex = '0.5';
-            section2.style.flex = '0.5';
-            section3.style.flex = '0';
-        }
-        else {
-            section1.style.flex = '0';
-            section2.style.flex = '0.5';
-            section3.style.flex = '0.5';
-        }
-        section3Visible=!section3Visible;
-    });
-  </script>
+<script type="text/javascript" src="./js/prueba.js"></script>
 
 </body>
 </html>
