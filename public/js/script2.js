@@ -1,7 +1,7 @@
 const submenuData = {
     'home': ['Overview', 'Team', 'History', 'News'],
-    'about': ['Mission', 'Vision', 'Values', 'Careers'],
-    'services': ['Consulting', 'Development', 'Design', 'Support'],
+    'projects': ['Mission', 'Vision', 'Values', 'Careers'],
+    'info': ['Consulting', 'Development', 'Design', 'Support'],
     'contact': ['Email', 'Phone', 'Address', 'Social Media']
 };
 
@@ -35,24 +35,58 @@ const detailData = {
     'Social Media': ['Facebook', 'Twitter', 'LinkedIn', 'Instagram']
 };
 
+const menuButton = document.getElementById('menu__button');
+const menu = document.querySelector('.menu');
+const menuContent = document.querySelector('.menu__content');
+
+// menu transformation + button transformation
+menuButton.addEventListener('click', function() {
+    // menu is expanded
+    if (menu.classList.contains('expanded')) {
+        // hide elements
+        menuContent.style.transition = 'visibility 0s 0.2s, opacity 0.2s ease-out';
+        menuContent.style.visibility = 'hidden';
+        menuContent.style.opacity = '0';
+        // hide menu
+        setTimeout(function() {
+            menu.classList.remove('expanded');
+        }, 200);
+        // change button
+        menuButton.textContent = 'Open menu';
+        menuButton.classList.remove('selected');
+    // menu is not expanded
+    } else {
+        // expand menu
+        menu.classList.add('expanded');
+        // show elements
+        setTimeout(function() {
+            menuContent.style.transition = 'opacity 0.2s ease-in';
+            menuContent.style.visibility = 'visible';
+            menuContent.style.opacity = '1';
+        }, 200);
+        // change button
+        menuButton.textContent = 'Close menu';
+        menuButton.classList.add('selected');
+    }
+});
+
+const submenu = document.getElementById('submenu');
+const detail = document.getElementById('detail');
 
 function showSubmenu(menuId) {
-  const submenu = document.getElementById('submenu');
-  const detail = document.getElementById('detail');
-  
-  // Reset both submenu and detail
-  submenu.classList.remove('half-width');
-  detail.classList.remove('visible');
-  detail.innerHTML = '';
+    // Reset both submenu and detail
+    submenu.classList.remove('change');
+    detail.classList.remove('change');
+    detail.innerHTML = '';
 
-  submenu.innerHTML = '';
-  submenuData[menuId].forEach(submenuId => {
-    const item = document.createElement('div');
-    item.textContent = submenuId;
-    item.classList.add('submenu-item');
-    item.onclick = () => showDetail(submenuId);
-    submenu.appendChild(item);
-  });
+    submenu.innerHTML = '';
+    submenuData[menuId].forEach(submenuId => {
+        const item = document.createElement('div');
+        item.textContent = submenuId;
+        item.classList.add('submenu__item');
+        item.onclick = () => showDetail(submenuId);
+        submenu.appendChild(item);
+    });
 }
 
 function showDetail(submenuId) {
@@ -60,7 +94,7 @@ function showDetail(submenuId) {
     const detail = document.getElementById('detail');
     
     detail.innerHTML = '';
-
+    
     if (typeof detailData[submenuId] === 'string') {
         // Inyección de HTML si el contenido es una cadena
         detail.innerHTML = detailData[submenuId];
@@ -69,6 +103,6 @@ function showDetail(submenuId) {
         detail.innerHTML = detailData[submenuId].map(detailId => `<div>${detailId}</div>`).join('<br>');
     }
     
-    submenu.classList.add('half-width');
-    detail.classList.add('visible');
+    submenu.classList.add('change');
+    detail.classList.add('change');
 }

@@ -1,0 +1,36 @@
+@font-face { /* thin */
+    font-family: 'NeueMontreal-Thin';
+    src: url('../assets/fonts/NeueMontreal-Thin.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face { /* regular */
+    font-family: 'NeueMontreal-Regular';
+    src: url('../assets/fonts/NeueMontreal-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face { /* medium */
+    font-family: 'NeueMontreal-Medium';
+    src: url('../assets/fonts/NeueMontreal-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face { /* bold */
+    font-family: 'NeueMontreal-Bold';
+    src: url('../assets/fonts/NeueMontreal-Bold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face { /* italic */
+    font-family: 'NeueMontreal-Italic';
+    src: url('../assets/fonts/NeueMontreal-Italic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face { /* italic bold */
+    font-family: 'NeueMontreal-ItalicBold';
+    src: url('../assets/fonts/NeueMontreal-ItalicBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
