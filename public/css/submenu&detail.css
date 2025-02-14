@@ -50,6 +50,8 @@
 @media screen and (min-width: 481px) { /* iPad / Tablet */
 }
 @media screen and (min-width: 769px) { /* laptop / small screen */
+}
+@media screen and (min-width: 1025px) { /* monitor / big screen */
     /* --- submenu --- */
     .submenu {
         align-items: flex-end;
@@ -65,6 +67,4 @@
         padding: 20px;
         width: 50%;
     }
-}
-@media screen and (min-width: 1025px) { /* monitor / big screen */
 }
