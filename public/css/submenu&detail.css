@@ -1,5 +1,3 @@
-
-
 .submenu {
     height: 100vh;
     width: 100%;
@@ -11,7 +9,7 @@
     align-items: flex-start;
 
     background-color: var(--c-blue-dark);
-    transition: transform 0.2s ease-in-out, width 0.5s ease;
+    transition: transform 0.5s ease-in-out, width 0.5s ease;
 }
 .submenu.change {
     visibility: hidden;
@@ -19,7 +17,7 @@
     width: 0%;
 }
 
-.submenu__item {
+.submenu__link {
     margin: 0;
 
     font-size: 40px;
@@ -27,9 +25,9 @@
     color: var(--c-white-bone);
     text-decoration: none;
     outline: none;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
-.submenu__item:hover {color: var(--c-red-dark);}
+.submenu__link:hover {color: var(--c-red-dark);}
 
                     /* --- detail --- */
 .detail {
@@ -39,7 +37,7 @@
 
     color: var(--c-white-bone);
     background-color: var(--c-blue-dark);
-    transition: width 0.5s ease;
+    transition: width 0.5s ease, transform 0.5s ease-in-out;
 }
 .detail.change {
     width: 100%;

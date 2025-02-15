@@ -39,7 +39,8 @@ const menuButton = document.getElementById('menu__button');
 const menu = document.querySelector('.menu');
 const menuContent = document.querySelector('.menu__content');
 
-                    // menu expansion + menu button modification
+
+                    //menu expansion + menu button modification
 menuButton.addEventListener('click', function() {
     // if is expanded
     if (menu.classList.contains('expanded')) {
@@ -47,7 +48,7 @@ menuButton.addEventListener('click', function() {
         setTimeout(function() {
             menu.classList.toggle('expanded');
         }, 200);
-        menuButton.textContent = 'Open menu';
+        menuButton.textContent = 'open menu';
         menuButton.classList.remove('selected');
     // if not expanded
     } else {
@@ -55,7 +56,7 @@ menuButton.addEventListener('click', function() {
         setTimeout(function() {
             menuContent.classList.toggle('expanded');
         }, 200);
-        menuButton.textContent = 'Close menu';
+        menuButton.textContent = 'close menu';
         menuButton.classList.add('selected');
     }
 });
@@ -68,13 +69,13 @@ function showSubmenu(event, menuId) {
     // reset both submenu and detail
     submenu.classList.remove('change');
     detail.classList.remove('change');
-    detail.innerHTML = '';
 
+    detail.innerHTML = '';
     submenu.innerHTML = '';
     submenuData[menuId].forEach(submenuId => {
         const item = document.createElement('div');
         item.textContent = submenuId;
-        item.classList.add('submenu__item');
+        item.classList.add('submenu__link');
         item.onclick = () => showDetail(submenuId);
         submenu.appendChild(item);
     });
@@ -86,6 +87,10 @@ function showSubmenu(event, menuId) {
     // add 'selected' to current menu link
     const clickedLink = event.target;
     clickedLink.classList.add('selected');
+    
+    // close menu
+    menuButton.click();
+
 }
 
                     // detail visible + submenu link modification
@@ -93,26 +98,18 @@ function showDetail(submenuId) {
     const submenu = document.getElementById('submenu');
     const detail = document.getElementById('detail');
     
-    detail.innerHTML = '';
-    
+    detail.innerHTML = '';   
     if (typeof detailData[submenuId] === 'string') {
-        // Inyección de HTML si el contenido es una cadena
+        // chain ---> HTML inyection
         detail.innerHTML = detailData[submenuId];
     } else {
-        // Generación de lista si el contenido es un array
+        // array ---> list
         detail.innerHTML = detailData[submenuId].map(detailId => `<div>${detailId}</div>`).join('<br>');
     }
     
     submenu.classList.add('change');
     detail.classList.add('change');
-    
-    
-    // add the equivalent into const submenuData => home:
-    //      <div class="menu__link" onclick="showSubmenu(event, 'home')">home</div>
-    //      <div class="menu__link" onclick="showSubmenu(event, 'projects')">projects</div>
-    //      <div class="menu__link" onclick="showSubmenu(event, 'info')">info</div>
-    //      <div class="menu__link" onclick="showSubmenu(event, 'contact')">contact</div>
-    
+
     // remove 'selected' from all submenu links
     document.querySelectorAll('.submenu__link').forEach(link => {
         link.classList.remove('selected');
