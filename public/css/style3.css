@@ -27,7 +27,7 @@ h1 {
     text-transform: uppercase;
 }
 
-                    /* --- effects --- */
+                    /* --- submenu --- */
 .selected {
     color: var(--c-red-dark);
 }

@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/fonts.css">
-  <link rel="stylesheet" href="./css/style3.css">
   <link rel="stylesheet" href="./css/menu&main.css">
   <link rel="stylesheet" href="./css/submenu&detail.css">
+  <link rel="stylesheet" href="./css/style3.css">
   <title>prueba</title>
 
 </head>
 <body>
-    <div class="menu">                                          <!-- menu -->
+    <div class="menu">
         <button id="menu__button" class="menu__button">open menu</button>
         <div class="menu__content">
             <div>
@@ -19,10 +19,10 @@
                 <p class="menu__job">Fullstack Web Developer</p>
             </div>
             <div class="menu__item">
-                <div class="menu__link" onclick="showSubmenu('home')">home</div>
-                <div class="menu__link" onclick="showSubmenu('projects')">projects</div>
-                <div class="menu__link" onclick="showSubmenu('info')">info</div>
-                <div class="menu__link" onclick="showSubmenu('contact')">contact</div>
+                <div class="menu__link" onclick="showSubmenu(event, 'home')">home</div>
+                <div class="menu__link" onclick="showSubmenu(event, 'projects')">projects</div>
+                <div class="menu__link" onclick="showSubmenu(event, 'info')">info</div>
+                <div class="menu__link" onclick="showSubmenu(event, 'contact')">contact</div>
             </div>
         </div>
     </div>
