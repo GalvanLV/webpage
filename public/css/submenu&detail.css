@@ -1,4 +1,5 @@
 .submenu {
+    z-index: 1;
     height: 100vh;
     width: 100%;
     padding: 20px;
@@ -8,7 +9,7 @@
     flex-direction: column;
     align-items: flex-start;
 
-    background-color: var(--c-blue-dark);
+    background-color: transparent;
     transition: transform 0.5s ease-in-out, width 0.5s ease;
 }
 .submenu.change {
@@ -31,13 +32,15 @@
 
                     /* --- detail --- */
 .detail {
+    z-index: 1;
     width: 0;
+    opacity: 0;
     box-sizing: border-box;
     overflow-y: auto;
 
     color: var(--c-white-bone);
     background-color: var(--c-blue-dark);
-    transition: width 0.5s ease, transform 0.5s ease-in-out;
+    transition: opacity 0.2s ease-in-out, width 0.5s ease, transform 0.5s ease-in-out;
 }
 .detail.change {
     width: 100%;

@@ -20,16 +20,33 @@ html, body {
 }
 
                     /* --- general --- */
-body {font-family: 'NeueMontreal-Regular', sans-serif;}
+body {
+    position: relative;
+    font-family: 'NeueMontreal-Regular', sans-serif;
+}
 h1 {
     margin: 0px;
     font-size: 40px;
     text-transform: uppercase;
 }
+a {
+    color: var(--c-white-bone);
+    text-decoration: none !important; /* issues in mobile phones */
+}
+a:hover {color: var(--c-red-dark) !important; /* issues in mobile phones */}
 
                     /* --- submenu --- */
 .selected {
     color: var(--c-red-dark);
+}
+
+                    /* --- detail --- */
+.about__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
                     /* --- media query --- */

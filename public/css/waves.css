@@ -1,14 +1,19 @@
-body {
-    width: 100vw;
-    height: 100vh;
+.waves__container {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    height: 100%;
+    pointer-events: none;
 }
-  
+
 a-waves {
-    z-index: 9;
     --x: -0.5rem;
     --y: 50%;
   
-    position: absolute;
+    
     top: 0;
     left: 0;
   
@@ -21,20 +26,20 @@ a-waves {
     opacity: 0.2;
   
     &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-  
-      width: 0.5rem;
-      height: 0.5rem;
-  
-      background: #160000;
-      border-radius: 50%;
-  
-      transform: translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0);
-      will-change: transform;
-  
-      content: "";
+        
+        top: 0;
+        left: 0;
+
+        width: 0.5rem;
+        height: 0.5rem;
+
+        background-color: var(--c-blue-dark);
+        border-radius: 50%;
+
+        transform: translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0);
+        will-change: transform;
+
+        content: "";
     }
   
     svg {
@@ -48,5 +53,18 @@ a-waves {
             stroke: #fff;
             stroke-width: 1px;
         }
+    }
+}
+
+
+                    /* --- media query --- */
+@media screen and (min-width: 481px) { /* iPad / Tablet */
+}
+@media screen and (min-width: 769px) { /* laptop / small screen */
+}
+@media screen and (min-width: 1025px) { /* monitor / big screen */
+    .waves__container {
+        width: calc(100% - 200px);
+        margin-left: 200px;
     }
 }
