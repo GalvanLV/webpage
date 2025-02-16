@@ -40,11 +40,13 @@
 
     color: var(--c-white-bone);
     background-color: var(--c-blue-dark);
-    transition: opacity 0.2s ease-in-out, width 0.5s ease, transform 0.5s ease-in-out;
+    transition: width 0.5s ease, transform 0.5s ease-in-out;
 }
 .detail.change {
     width: 100%;
     padding: 20px;
+    opacity: 1;
+
     border-left: 1px solid var(--c-white-bone-rgba);
 }
 

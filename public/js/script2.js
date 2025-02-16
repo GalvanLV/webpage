@@ -49,16 +49,18 @@ const detailData = {
     'Social Media': ['Facebook', 'Twitter', 'LinkedIn', 'Instagram']
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Aseguramos que el "home" esté seleccionado al cargar
-    const homeLink = document.querySelector('.menu__link[data-id="home"]');
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Aseguramos que el "home" esté seleccionado al cargar
+//     const homeLink = document.querySelector('.menu__link[data-id="home"]');
     
-    if (homeLink) {
-        homeLink.classList.add('selected');
-        // Llamamos a showSubmenu como si fuera un clic en home
-        showSubmenu({target: homeLink}, 'home');
-    }
-});
+//     if (homeLink) {
+//         homeLink.classList.add('selected');
+//         // Llamamos a showSubmenu como si fuera un clic en home
+//         showSubmenu({target: homeLink}, 'home');
+//     }
+// });
+
+
 
 const menuButton = document.getElementById('menu__button');
 const menu = document.querySelector('.menu');
@@ -118,24 +120,18 @@ function showSubmenu(event, menuId) {
 
                     // detail visible + submenu link modification
 function showDetail(submenuId) {
-    // select content
-    const submenu = document.getElementById('submenu');
-    const detail = document.getElementById('detail');
-
-    setTimeout(() => {    
-        detail.innerHTML = '';   
-        if (typeof detailData[submenuId] === 'string') {
-            // chain ---> HTML inyection
-            detail.innerHTML = detailData[submenuId];
-        } else {
-            // array ---> list
-            detail.innerHTML = detailData[submenuId].map(detailId => `<div>${detailId}</div>`).join('<br>');
-        }
-        detail.style.opacity = '1';  // Hacer visible el contenido
-    }, 500);
-    
     submenu.classList.add('change');
     detail.classList.add('change');
+
+    detail.innerHTML = '';   
+    if (typeof detailData[submenuId] === 'string') {
+        // chain ---> HTML inyection
+        detail.innerHTML = detailData[submenuId];
+    } else {
+        // array ---> list
+        detail.innerHTML = detailData[submenuId].map(detailId => `<div>${detailId}</div>`).join('<br>');
+    }
+    detail.style.opacity = '1';  // Hacer visible el contenido
 
     // remove 'selected' from all submenu links
     document.querySelectorAll('.submenu__link').forEach(link => {
