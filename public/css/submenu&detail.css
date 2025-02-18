@@ -28,7 +28,10 @@
     outline: none;
     transition: transform 0.5s ease-in-out;
 }
-.submenu__link:hover {color: var(--c-red-dark);}
+.submenu__link:hover {
+    color: var(--c-red-dark);
+    transition: all 0.2s ease-in;
+}
 
                     /* --- detail --- */
 .detail {

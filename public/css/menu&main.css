@@ -35,7 +35,10 @@
     background-color: transparent;
     transition: color 0.2s ease;
 }
-.menu__button:hover {color: var(--c-red-dark);}
+.menu__button:hover {
+    color: var(--c-red-dark);
+    transition: all 0.2s ease-in;
+}
 
 .menu__content {
     top: 0;
@@ -100,6 +103,7 @@
 }
 .menu__link:hover {
     color: var(--c-red-dark);
+    transition: all 0.2s ease-in;
 }
 
                     /* --- main --- */
