@@ -90,7 +90,6 @@ const detailData = {
     'coming soon': 
     `
         <h2 class="project__title">Property Management</h2>
-
         <br><br>
         <p>
             This project involves the development of an application designed to efficiently manage property-owned apartments.<br>
@@ -99,9 +98,7 @@ const detailData = {
         </p>
         <br><br><br><br>
 
-
         <h2 class="project__title">Repair & Installation Company</h2>
-
         <br>
         <p>
             This project involves the development of a website for a client who has founded a company specializing in electrical and plumbing repairs and installations. The website aims to showcase the company’s expertise, providing potential customers with easy access to key information about the services offered.<br>
@@ -109,6 +106,13 @@ const detailData = {
 
             This website will serve as an essential tool for establishing an online presence and promoting the company’s services to a broader audience.<br>
             As the project progresses, additional features may be incorporated to further enhance the user experience and offer more in-depth information about the company’s repair and installation solutions.
+        </p>
+        <br><br><br><br>
+
+        <h2 class="project__title">Task Management</h2>
+        <br>
+        <p>
+            This project involves the development of a simple task management application, designed to help users organize their tasks effectively. The application will offer a basic interface where users can view and manage their tasks either through a calendar layout or a straightforward task list. It will include essential CRUD (Create, Read, Update, Delete) functionality, allowing users to easily create new tasks, view their existing tasks, modify details of ongoing tasks, and delete tasks that are no longer needed. The goal is to create a user-friendly tool for managing daily tasks and improving productivity, with a focus on simplicity and efficiency.
             <br><br><br><br>
         </p>
         <br><br><br><br>
@@ -173,7 +177,18 @@ const detailData = {
     `,
     'upcoming': 
     `
-        <h2>pending to fill</h2>
+        <h2 class="project__title">React.js</h2>
+        <br>
+        <p>
+            Although my specialization has been in Symfony, I am eager to acquire new skills in React.js to strengthen my frontend development knowledge. To achieve this, I am currently undertaking two courses. One is a 49-hour course offered by O'clock School and the second is a comprehensive 55-hour course on Udemy.<br><br>
+
+            At O'clock School, I will gain a solid foundation in the React.js ecosystem, learning the essential principles and tools that drive modern frontend development. This course provides a comprehensive introductio.<br>
+            The 55-hour course on Udemy not only reinforces the fundamentals I will learn at O'clock but also will dive deeper into advanced concepts such as React Hooks and the MERN stack (MongoDB, Express, React, Node.js).<br><br>
+
+            By combining both courses, I aim to strengthen my frontend capabilities and gain practical experience with React.js and related technologies.
+            <br><br><br><br>
+        </p>
+        <br><br><br><br>
     `,
     'contact':
     `
