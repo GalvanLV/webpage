@@ -57,6 +57,18 @@ const detailData = {
             <br><br>
         </p>
 
+        <h3 class="selected">demo</h3>
+        <div class="project__video">
+            <iframe
+                src="https://www.youtube.com/embed/C17qhryJjkE" 
+                title="O'rigin - Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <br><br>
+
         <h3 class="selected">homepage</h3>
         <img src="assets/media/origin/main.webp" alt="image" class="project__image">
         <img src="assets/media/origin/arbres_du_jour.webp" alt="image" class="project__image">
@@ -74,17 +86,6 @@ const detailData = {
         <img src="assets/media/origin/gestion_utilisateurs.webp" alt="image" class="project__image">
         <img src="assets/media/origin/gestion_arbres.webp" alt="image" class="project__image">
         <br><br>
-
-        <h3 class="selected">demo</h3>
-        <div class="project__video">
-            <iframe
-                src="https://www.youtube.com/embed/C17qhryJjkE" 
-                title="O'rigin - Demo" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
     `,
     'coming soon': 
     `

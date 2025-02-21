@@ -308,6 +308,7 @@ ul {
     width: 100%;
     height: auto;
     margin: 20px auto;
+    padding: 5px;
     display: block;
 
     border: 1px solid var(--c-white-bone-rgba);
