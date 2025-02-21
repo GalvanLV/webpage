@@ -53,7 +53,6 @@
     border-left: 1px solid var(--c-white-bone-rgba);
 }
 
-/* */
 .detail__content {
     opacity: 0;
     color: var(--c-white-bone);
@@ -62,7 +61,15 @@
 .detail__content.change {
     opacity: 1;
 }
-/* */
+
+                    /* --- about me --- */
+.about__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
 
                     /* --- media query --- */
 @media screen and (min-width: 481px) { /* iPad / Tablet */

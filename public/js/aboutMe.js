@@ -1,6 +1,6 @@
 window.aboutMeData = 
 `
-    <img src="/assets/images/profile.jpg" alt="profile image" class="about__image">
+    <img src="/assets/images/profile.webp" alt="profile image" class="about__image">
     <p>
         Galvan Lopez<br><br><br>
 

@@ -28,8 +28,8 @@
     border: none;
     text-align: center;
     text-transform: uppercase;
-    transform: translateY(-50%) rotate(180deg);
-    writing-mode: vertical-rl;
+    transform: translateY(-50%);
+    writing-mode: vertical-lr;
     color: var(--c-white-bone);
     font-family: 'NeueMontreal-Medium', sans-serif;
     background-color: transparent;
